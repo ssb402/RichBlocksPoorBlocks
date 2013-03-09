@@ -47,11 +47,34 @@ $(document).ready(function(){
 					} // DONE: function(results,status)
 				); // DONE: geocoder.geocode
 
+
+			// SECTION 2.1: The 'Change Map Size' button
+			$('#button-mapsize').click(
+				function changeMapSize(){
+					var slideToggleArr = ['h1','h2','#note']; // These are the DOM elements that will be hidden or shown when the 'Change Map Size' button is clicked
+					var mapCanvas = $('#map-canvas')
+					var mapHeight = mapCanvas.height();
+					var bodyHeight = $('body').height();
+					var map75Body = (Math.round(bodyHeight * 0.75))===mapHeight; // A boolean variable that returns 'true' if mapHeight is 75% of bodyHeight
+					
+					$(slideToggleArr.join(',')).slideToggle();
+					
+					// If the map is regular sized, then embiggen it. Else, shrink it back to normal size.
+					if (map75Body){
+						mapCanvas.animate({height:'100%'});
+					} else {
+						mapCanvas.animate({height:'75%'});
+					};					
+				}
+			);
+
+
 			// SECTION 3: Find the address once the button is clicked
 			var layer = null;
 			var infoWindow = new google.maps.InfoWindow();
-			$(':button').click(
+			$('#button-search').click(
 				function codeAddress(){
+					// The following commented-out block is for future use -- possibly to desaturate the map, since it's easier to read colored data on a black-and-white background.
 					// var mapStyle = 'map-style';
 
 					// var style = [
@@ -187,6 +210,7 @@ $(document).ready(function(){
 									];
 
 									// If there is no div with the id 'legend,' make one.
+									var legend = $('div#legend');
 									if ($('div#legend').length===0) {
 										var legend = document.createElement('div');
 										legend.id = 'legend';
