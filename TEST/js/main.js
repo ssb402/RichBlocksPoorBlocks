@@ -55,12 +55,11 @@ $(document).ready(function(){
 					var mapCanvas = $('#map-canvas')
 					var mapHeight = mapCanvas.height();
 					var bodyHeight = $('body').height();
-					var map75Body = (Math.round(bodyHeight * 0.75))===mapHeight; // A boolean variable that returns 'true' if mapHeight is 75% of bodyHeight
+
+					$(slideToggleArr.join(',')).slideToggle(); // Toggles visibility of all elements in 'slideToggleArr'
 					
-					$(slideToggleArr.join(',')).slideToggle();
-					
-					// If the map is regular sized, then embiggen it. Else, shrink it back to normal size.
-					if (map75Body){
+					// If the map is NOT the same size as the 'body', then embiggen it. Otherwise, shrink it back down.
+					if (mapHeight!=bodyHeight){
 						mapCanvas.animate({height:'100%'});
 					} else {
 						mapCanvas.animate({height:'75%'});
