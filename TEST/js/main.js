@@ -1,3 +1,4 @@
+// v1.11
 $(document).ready(function(){
 	$.getJSON("./js/states_pretty.JSON",function(states){
 		var styleNum, legendScale, condition, fillO, dataType, errorType, infoWindow1;
