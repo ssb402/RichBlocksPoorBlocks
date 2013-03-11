@@ -17,9 +17,8 @@ If you do fork this branch, it would be mighty nice of you to name your repo 'Ri
 
 ## Programs and languages used to make this ##
 
--HTML, CSS, JavaScript, and Google Fusion Tables.
-
--JavaScript libraries: [jQuery](http://jquery.com/), [Google Maps JavaScript API v3](https://developers.google.com/maps/documentation/javascript/), and [accounting.js](http://josscrowcroft.github.com/accounting.js/).
+- HTML, CSS, JavaScript, and Google Fusion Tables.
+- JavaScript libraries: [jQuery](http://jquery.com/), [Google Maps JavaScript API v3](https://developers.google.com/maps/documentation/javascript/), and [accounting.js](http://josscrowcroft.github.com/accounting.js/).
 
 Each state map used on the site was made in Google Fusion Tables.
 
