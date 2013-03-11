@@ -11,6 +11,7 @@ For non-minified code, check this repository's ['develop'](https://github.com/my
 ## Programs and languages used to make this ##
 
 HTML, CSS, JavaScript, and Google Fusion Tables.
+
 JavaScript libraries: [jQuery](http://jquery.com/), [Google Maps JavaScript API v3](https://developers.google.com/maps/documentation/javascript/), and [accounting.js](http://josscrowcroft.github.com/accounting.js/).
 
 Each state map used on the site was made in Google Fusion Tables.
@@ -19,7 +20,9 @@ Each state map used on the site was made in Google Fusion Tables.
 ## Site features ##
 
 Maps for median income and median rent for each U.S. Census Tract.
+
 Map embiggener button.
+
 Colorblind mode.
 
 
