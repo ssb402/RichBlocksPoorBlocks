@@ -1,5 +1,23 @@
-// v1.11
+// v1.2
+// Some comments (questions) here are mostly by Chris Persaud attempting to understand how all this works.
+
+// When called, parses and returns query string, client-side, as object properties
+function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++){
+        hash = hashes[i].split('=');
+        // we should urldecode the values, but hopefully the keys do not require it
+        vars[hash[0]] = unescape(hash[1]);
+    }
+    return vars;
+}
+
 $(document).ready(function(){
+	// SECTION 0: Capture query string
+	// http://dl.dropbox.com/u/58785631/RichBlocksPoorBlocks_TEST/TEST/index.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
+	p = getUrlVars();
+
 	$.getJSON("./js/states_pretty.JSON",function(states){
 		var styleNum, legendScale, condition, fillO, dataType, errorType, infoWindow1;
 		// SECTION 1: ADDING HTML TO DOM
@@ -25,8 +43,25 @@ $(document).ready(function(){
 		// DONE ADDING HTML TO DOM
 
 
+		// Iterate through query string
+		for (var key in p) {
+		
+			if (p.hasOwnProperty(key)) {
+				
+				if (key == 'address') {
+					document.getElementById('address').value = p[key];
+				} else if (key == 'state-select') {
+					$("#state-select").val(p[key]);
+				} else if (key == 'map-type-select') {
+					$("#map-type-select").val(p[key]);
+				} else if (key == 'colorblind' && p[key] == 'checked') {
+					$('input[name=colorblind]').prop('checked', true);
+				} // DONE: if (key == 'address')...
+			} // DONE: if (p.hasOwnProperty(key))
+		} // DONE: for (var key in p)
+
 		// SECTION 2: Create the Google map with the coordinates and add the Fusion Tables layer to it. Plus, it zooms and centers to whatever state is selected.
-		var geocoder,gmap;
+		var geocoder, gmap;
 		var mapOptions = {
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
