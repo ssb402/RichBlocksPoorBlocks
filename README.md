@@ -1,7 +1,7 @@
-Here's all the code used for the website http://www.RichBlocksPoorBlocks.com.
+## RichBlocksPoorBlocks.com LIVE ##
 
-The "LIVE" folder contains all the files currently used on the site.
+This is the code currently used on the website http://www.RichBlocksPoorBlocks.com. It is minified.
 
-The "TEST" folder contains the non-minified versions of those files.
+For non-minified code, check the 'development' branch of this repository.
 
-If you have any questions on this, send an email to RichBlocksPoorBlocks@gmail.com, or send a Tweet to @RichBlocksPoorB.
+Please send all questions to RichBlocksPoorBlocks@gmail.com, or tweet @RichBlocksPoorB.
