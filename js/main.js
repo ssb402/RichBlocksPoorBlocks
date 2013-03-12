@@ -1,5 +1,16 @@
 // v1.2
 // Some comments (questions) here are mostly by Chris Persaud attempting to understand how all this works.
+// 03/11/2012 Update: This code is at the point where the map zooms to the queried address automatically (just make sure the URL you type in has a valid query at the end -- see the line below for an example...)
+
+// Example query that the embed feature is meant to capture and parse: PATH/TO/index.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
+
+/*
+	Enter the above URL into your browser. 
+	You'll see that the address box has '1900 Pennsylvania Avenue' in it, while the state selected is 'District of Columbia'. 
+	The 'Income' map is selected, and colorblind mode is turned on.
+	Once the web page (er, DOM) is ready to be interacted with, codeAddress will run (see lines 123 to 266 for more info). 
+*/
+
 
 // When called, parses and returns query string, client-side, as object properties
 function getUrlVars(){
@@ -15,7 +26,7 @@ function getUrlVars(){
 
 $(document).ready(function(){
 	// SECTION 0: Capture query string
-	// http://dl.dropbox.com/u/58785631/RichBlocksPoorBlocks_TEST/TEST/index.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
+	// PATH/TO/index.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
 	p = getUrlVars();
 
 	$.getJSON("./js/states_pretty.JSON",function(states){
@@ -67,21 +78,21 @@ $(document).ready(function(){
 		};
 
 		function initialize(){
-				geocoder = new google.maps.Geocoder(); // This variables is used to automate zooming and centering in this script
-				gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); // Removing this removes the Google Maps layer -- but would it keep any layers on top of it?
+			geocoder = new google.maps.Geocoder(); // This variables is used to automate zooming and centering in this script
+			gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); // Removing this removes the Google Maps layer -- but would it keep any layers on top of it?
 
-				geocoder.geocode(
-					{
-						'address':'United States'
-					},
-					function(results,status){
-						var sw = results[0].geometry.viewport.getSouthWest();
-						var ne = results[0].geometry.viewport.getNorthEast();
-						var bounds = new google.maps.LatLngBounds(sw,ne);
-						
-						gmap.fitBounds(bounds)
-					} // DONE: function(results,status)
-				); // DONE: geocoder.geocode
+			geocoder.geocode(
+				{
+					'address':'United States'
+				},
+				function(results,status){
+					var sw = results[0].geometry.viewport.getSouthWest();
+					var ne = results[0].geometry.viewport.getNorthEast();
+					var bounds = new google.maps.LatLngBounds(sw,ne);
+					
+					gmap.fitBounds(bounds)
+				} // DONE: function(results,status)
+			); // DONE: geocoder.geocode
 
 
 			// SECTION 2.1: The 'Change Map Size' button
@@ -107,173 +118,156 @@ $(document).ready(function(){
 			// SECTION 3: Find the address once the button is clicked
 			var layer = null;
 			var infoWindow = new google.maps.InfoWindow();
-			$('#button-search').click(
-				function codeAddress(){
-					// The following commented-out block is for future use -- possibly to desaturate the map, since it's easier to read colored data on a black-and-white background.
-					// var mapStyle = 'map-style';
+			
+			// The function puts the selected state Fusion Table map on the Google map, then zooms into the address you typed in.
+			var codeAddress = function codeAddress(){
+				infoWindow.close(); // Closes any open infoWindows when the "Search" button is clicked
+				var stateSelectText = $("#state-select option:selected").text();
+				var mapTypeText = $('#map-type-select option:selected').text();
+				if (stateSelectText==="PICK A STATE" || mapTypeText==="PICK MAP TYPE"){ // Safeguard against clicking "Search" without picking a state or map type
+					alert("Please pick a state and map type, then click \"Search\"");
+				} else {
+					
+					var address = document.getElementById("address").value;
+					var selectedState = document.getElementById("state-select").value;
+					var locationColumn = 'geometry';
+					var tableId = states[selectedState]["tableId"];
 
-					// var style = [
-					// 	{
-					// 		stylers: [
-					// 			{
-					// 				saturation: -90
-					// 			}
-					// 		]
-					// 	}
-					// ];
+					if(mapTypeText==="Income"){
+						condition = 'median_hh_income > 0 AND error > 0';
+						if ($('input[name=colorblind]:checked').val()==="colorblind") { // Colorblind option
+							styleNum = 3;
+							legendScale = 'styleNum3.png';
+						} else {
+							styleNum = 2;
+							legendScale = 'styleNum2.png';
+						}; // DONE; if ($('input[name=colorblind]:checked').val()==="colorblind")
 
-					// var styleObj = {
-					// 	map: gmap,
-					// 	name: 'Styled Map'
-					// };
+						fillO = 0.4;
 
-					// var styledMapType = new google.maps.StyledMapType(style, styleObj);
+						dataType = 'median_hh_income';
+						errorType = 'error'; // The error margin for median household income
+						rangeType = 'medianIncome';
 
-					infoWindow.close(); // Closes any open infoWindows when the "Search" button is clicked
-					var stateSelectText = $("#state-select option:selected").text();
-					var mapTypeText = $('#map-type-select option:selected').text();
-					if (stateSelectText==="PICK A STATE" || mapTypeText==="PICK MAP TYPE"){ // Safeguard against clicking "Search" without picking a state or map type
-						alert("Please pick a state and map type, then click \"Search\"");
-					} else {
-						
-						var address = document.getElementById("address").value;
-						var selectedState = document.getElementById("state-select").value;
-						var locationColumn = 'geometry';
-						var tableId = states[selectedState]["tableId"];
+						infoWindow1 = 'Median household income';
+						infoWindow2 = 'Statewide middle-class income range';
+					} else if(mapTypeText==="Rent"){
+						condition = 'median_rent > 0';
+						styleNum = 4;
+						fillO = 0.6;
+						legendScale = 'styleNum4.png';
 
-						if(mapTypeText==="Income"){
-							condition = 'median_hh_income > 0 AND error > 0';
-							if ($('input[name=colorblind]:checked').val()==="colorblind") { // Colorblind option
-								styleNum = 3;
-								legendScale = 'styleNum3.png';
-							} else {
-								styleNum = 2;
-								legendScale = 'styleNum2.png';
-							}; // DONE; if ($('input[name=colorblind]:checked').val()==="colorblind")
+						dataType = 'median_rent';
+						errorType = 'rent_error';
+						rangeType = 'medianRent';
 
-							fillO = 0.4;
+						infoWindow1 = 'Median monthly rent';
+						infoWindow2 = 'Statewide middle rental-range';
+					}; // DONE: if(mapTypeText==="Income")
+					var infoWindow1Lower = infoWindow1.toLowerCase();
 
-							dataType = 'median_hh_income';
-							errorType = 'error'; // The error margin for median household income
-							rangeType = 'medianIncome';
+					
+					var strokeC = '#ffffff';
+					var strokeO = 0.3;
 
-							infoWindow1 = 'Median household income';
-							infoWindow2 = 'Statewide middle-class income range';
-						} else if(mapTypeText==="Rent"){
-							condition = 'median_rent > 0';
-							styleNum = 4;
-							fillO = 0.6;
-							legendScale = 'styleNum4.png';
-
-							dataType = 'median_rent';
-							errorType = 'rent_error';
-							rangeType = 'medianRent';
-
-							infoWindow1 = 'Median monthly rent';
-							infoWindow2 = 'Statewide middle rental-range';
-						}; // DONE: if(mapTypeText==="Income")
-						var infoWindow1Lower = infoWindow1.toLowerCase();
-
-						
-						var strokeC = '#ffffff';
-						var strokeO = 0.3;
-
-						var layerObj = {
-							query: {
-								select: locationColumn,
-								from: tableId,
-								where: condition
-							},
-							styles: [
-								{
-									polygonOptions: {
-										strokeColor: strokeC,
-										strokeOpacity: strokeO,
-										fillOpacity: fillO
-									}
-								}
-							],
-							styleId: styleNum,
-							suppressInfoWindows: true
-						};
-						
-						geocoder.geocode(
+					var layerObj = {
+						query: {
+							select: locationColumn,
+							from: tableId,
+							where: condition
+						},
+						styles: [
 							{
-								'address':address + ',' + selectedState
-							},
-							function(results,status){
-								if(status===google.maps.GeocoderStatus.OK){
-									var addressSW = results[0].geometry.viewport.getSouthWest();
-									var addressNE = results[0].geometry.viewport.getNorthEast();
-									var bounds = new google.maps.LatLngBounds(addressSW,addressNE);
-									gmap.fitBounds(bounds);
+								polygonOptions: {
+									strokeColor: strokeC,
+									strokeOpacity: strokeO,
+									fillOpacity: fillO
+								}
+							}
+						],
+						styleId: styleNum,
+						suppressInfoWindows: true
+					};
+					
+					geocoder.geocode(
+						{
+							'address':address + ',' + selectedState
+						},
+						function(results,status){
+							if(status===google.maps.GeocoderStatus.OK){
+								var addressSW = results[0].geometry.viewport.getSouthWest();
+								var addressNE = results[0].geometry.viewport.getNorthEast();
+								var bounds = new google.maps.LatLngBounds(addressSW,addressNE);
+								gmap.fitBounds(bounds);
 
-									// Before the first time ':button' runs, 'layer' should be null. This if/else statement is to make sure only one FT map is on the map at a time.
-									if (layer===null) {
-										layer = new google.maps.FusionTablesLayer(layerObj);
-										layer.setMap(gmap);
-									} else {
-										layer.setOptions(layerObj);
-									}; // DONE: if (layer===null)
-
-									// Add custom Infowindows to the map
-									google.maps.event.addListener(layer,'click',function(e){
-										var medianVal = accounting.formatMoney(e.row[dataType].value);
-										var marginError = accounting.formatMoney(e.row[errorType].value);
-										var midRange1 = accounting.formatMoney(states[selectedState][rangeType]["percent40"]);
-										var midRange2 = accounting.formatMoney(states[selectedState][rangeType]["percent60"]);
-
-										e.infoWindowHtml = [
-											'<b>' + e.row['label'].value + '.</b>',
-											'<b>' + infoWindow1 + ':</b> ' + medianVal + ' (+/- ' + marginError + ').',
-											'<b>' + infoWindow2 + ':</b> ' + midRange1 + ' to ' + midRange2 + '. <br>',
-											'<i>All data come from the 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>. The statewide middle range covers Census Tracts which have a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of this state\'s Census Tracts.</i>'
-										];
-										infoWindow.setContent('<div class="info-window">' + e.infoWindowHtml.join('<br>') + '</div>');
-										infoWindow.setPosition(e.latLng);
-										infoWindow.open(gmap);
-									}); // DONE: google.maps.event.addListener
-									
-								   	// Setting up and adding the legend
-								   	var bottom5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent5"]);
-								   	var top5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent95"]);
-									var legendLabels = [
-										'<h3 id="legend-title">'+selectedState+' '+infoWindow1Lower+' (in 2011 dollars)</h3> <div id="legend-labels">',
-										'<span id="bottom5">'+bottom5Perc+' or less</span>',
-										'<img id="gradient" src="./images/'+legendScale +'" />',
-										'<span id="top5">'+top5Perc+' or more</span>'
-									];
-
-									// If there is no div with the id 'legend,' make one.
-									var legend = $('div#legend');
-									if ($('div#legend').length===0) {
-										var legend = document.createElement('div');
-										legend.id = 'legend';
-									   	legend.innerHTML = legendLabels.join('');
-									   	gmap.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend); // Pushes the legend to the right-bottom of the map	
-									} else {
-										$('div#legend').html(legendLabels.join('')); // Similar to 'legend.innerHTML = legendLabels.join('')', except this line of code allows the gradient image to change depending on color mode
-									}; // DONE: if ($('div#legend').length===0)
-									
-									// Change the legend labels
-									$('#legend-title').html(selectedState+' '+infoWindow1Lower+' (in 2011 dollars)');
-									$('#bottom5').html(bottom5Perc+' or less');
-									$('#top5').html(top5Perc+' or more');
-
+								// Before the first time ':button' runs, 'layer' should be null. This if/else statement is to make sure only one FT map is on the map at a time.
+								if (layer===null) {
+									layer = new google.maps.FusionTablesLayer(layerObj);
+									layer.setMap(gmap);
 								} else {
-									alert("Couldn't find address for the following reason: " + status + ". Sorry about that. Please try another address.");
-								} // DONE: if(status===google.maps.GeocoderStatus.OK)
-							} // DONE: function(results,status)
-						); // DONE: geocoder.geocode
-						
-						// Desaturate the map after clicking 'Search'
-						// gmap.mapTypes.set(mapStyle, styledMapType);
-						// gmap.setMapTypeId(mapStyle);
+									layer.setOptions(layerObj);
+								}; // DONE: if (layer===null)
 
-					}; // DONE: if ($("#state-select option:selected").text()==="PICK A STATE")
-				} // DONE: function codeAddress()
+								// Add custom Infowindows to the map
+								google.maps.event.addListener(layer,'click',function(e){
+									var medianVal = accounting.formatMoney(e.row[dataType].value);
+									var marginError = accounting.formatMoney(e.row[errorType].value);
+									var midRange1 = accounting.formatMoney(states[selectedState][rangeType]["percent40"]);
+									var midRange2 = accounting.formatMoney(states[selectedState][rangeType]["percent60"]);
+
+									e.infoWindowHtml = [
+										'<b>' + e.row['label'].value + '.</b>',
+										'<b>' + infoWindow1 + ':</b> ' + medianVal + ' (+/- ' + marginError + ').',
+										'<b>' + infoWindow2 + ':</b> ' + midRange1 + ' to ' + midRange2 + '. <br>',
+										'<i>All data come from the 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>. The statewide middle range covers Census Tracts which have a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of this state\'s Census Tracts.</i>'
+									];
+									infoWindow.setContent('<div class="info-window">' + e.infoWindowHtml.join('<br>') + '</div>');
+									infoWindow.setPosition(e.latLng);
+									infoWindow.open(gmap);
+								}); // DONE: google.maps.event.addListener
+								
+							   	// Setting up and adding the legend
+							   	var bottom5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent5"]);
+							   	var top5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent95"]);
+								var legendLabels = [
+									'<h3 id="legend-title">'+selectedState+' '+infoWindow1Lower+' (in 2011 dollars)</h3> <div id="legend-labels">',
+									'<span id="bottom5">'+bottom5Perc+' or less</span>',
+									'<img id="gradient" src="./images/'+legendScale +'" />',
+									'<span id="top5">'+top5Perc+' or more</span>'
+								];
+
+								// If there is no div with the id 'legend,' make one.
+								var legend = $('div#legend');
+								if ($('div#legend').length===0) {
+									var legend = document.createElement('div');
+									legend.id = 'legend';
+								   	legend.innerHTML = legendLabels.join('');
+								   	gmap.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend); // Pushes the legend to the right-bottom of the map	
+								} else {
+									$('div#legend').html(legendLabels.join('')); // Similar to 'legend.innerHTML = legendLabels.join('')', except this line of code allows the gradient image to change depending on color mode
+								}; // DONE: if ($('div#legend').length===0)
+								
+								// Change the legend labels
+								$('#legend-title').html(selectedState+' '+infoWindow1Lower+' (in 2011 dollars)');
+								$('#bottom5').html(bottom5Perc+' or less');
+								$('#top5').html(top5Perc+' or more');
+
+							} else {
+								alert("Couldn't find address for the following reason: " + status + ". Sorry about that. Please try another address.");
+							} // DONE: if(status===google.maps.GeocoderStatus.OK)
+						} // DONE: function(results,status)
+					); // DONE: geocoder.geocode
+				}; // DONE: if ($("#state-select option:selected").text()==="PICK A STATE")
+			}; // DONE: function codeAddress()
+			
+			$(codeAddress); // This line of code makes codeAddress() run automatically.
+			$('#button-search').click(
+				codeAddress
 			); // DONE: $(':button').click()
+			
 		} // DONE: function initialize()
 		google.maps.event.addDomListener(window, 'load', initialize);
+		
 	}); // DONE: $.getJSON()
 }); // DONE: $(document).ready()
+
