@@ -14,6 +14,8 @@ If you think you can make [RichBlocksPoorBlocks.com](http://www.RichBlocksPoorBl
 
 If you do fork this branch, it would be mighty nice of you to name your repo 'RichBlocksPoorBlocks_{YOUR_IDEA_HERE}'. That way, it'll be easier for everyone to keep track of what everyone else is doing.
 
+For more info on an ideal Git branching practices, check [this article](http://nvie.com/posts/a-successful-git-branching-model/) on git workflow.
+
 
 ## Programs and languages used to make this ##
 
