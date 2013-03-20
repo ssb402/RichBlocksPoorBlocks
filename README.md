@@ -1,4 +1,4 @@
-Rich Blocks, Poor Blocks v1.0
+Rich Blocks, Poor Blocks LIVE
 ==============================
 
 ## What is this? ##
