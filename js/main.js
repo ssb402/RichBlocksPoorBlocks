@@ -72,6 +72,9 @@ $(document).ready(function(){
 			// SECTION 3: Find the address once the button is clicked
 			var layer = null;
 			var infoWindow = new google.maps.InfoWindow();
+			var searchCount = 0;
+			var colorblindChecked = $('input[name=colorblind]:checked').val();
+
 			$('#button-search').click(
 				function codeAddress(){
 					// The following commented-out block is for future use -- possibly to desaturate the map, since it's easier to read colored data on a black-and-white background.
@@ -94,7 +97,8 @@ $(document).ready(function(){
 
 					// var styledMapType = new google.maps.StyledMapType(style, styleObj);
 
-					infoWindow.close(); // Closes any open infoWindows when the "Search" button is clicked
+					searchCount += 1; // If this variable is greater than zero, the function in 'mapTypeSelect.change()' will run
+
 					var stateSelectText = $("#state-select option:selected").text();
 					var mapTypeText = $('#map-type-select option:selected').text();
 					if (stateSelectText==="PICK A STATE" || mapTypeText==="PICK MAP TYPE"){ // Safeguard against clicking "Search" without picking a state or map type
@@ -108,7 +112,7 @@ $(document).ready(function(){
 
 						if(mapTypeText==="Income"){
 							condition = 'median_hh_income > 0 AND error > 0';
-							if ($('input[name=colorblind]:checked').val()==="colorblind") { // Colorblind option
+							if (colorblindChecked==="colorblind") { // Colorblind option
 								styleNum = 3;
 								legendScale = 'styleNum3.png';
 							} else {
@@ -139,7 +143,6 @@ $(document).ready(function(){
 						}; // DONE: if(mapTypeText==="Income")
 						var infoWindow1Lower = infoWindow1.toLowerCase();
 
-						
 						var strokeC = '#ffffff';
 						var strokeO = 0.3;
 
@@ -238,6 +241,31 @@ $(document).ready(function(){
 					}; // DONE: if ($("#state-select option:selected").text()==="PICK A STATE")
 				} // DONE: function codeAddress()
 			); // DONE: $(':button').click()
+
+
+			// SECTION 4: Change the map type once the map type is changed in the map type dropdown.
+			mapTypeSelect.change(
+				function() {
+					if (searchCount>0){
+						var option = $(this).val();
+
+						if (option==='Income') {
+							if (colorblindChecked==='colorblind'){
+								styleNum = 3;
+							} else {
+								styleNum = 2;
+							};
+						} else if(option==='Rent'){
+							styleNum = 4;
+						}; // DONE: if (option==='Income')
+
+						layer.setOptions({
+							styleId: styleNum
+						});					
+					}; // DONE: if (searchCount>0)
+
+				}
+			);
 		} // DONE: function initialize()
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}); // DONE: $.getJSON()
