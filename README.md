@@ -1,4 +1,4 @@
-Rich Blocks, Poor Blocks v1.0 (development)
+Rich Blocks, Poor Blocks v1.01 (development)
 ==============================
 
 ## What is this? ##
@@ -42,3 +42,9 @@ All median income and median rent data come from the U.S. Census' 2007-2011 Amer
 Questions? Email RichBlocksPoorBlocks@gmail.com, tweet [@RichBlocksPoorB](http://www.Twitter.com/RichBlocksPoorB), or tweet site creator Chris Persaud at [@ChrisMPersaud](http://www.Twitter.com/ChrisMPersaud).
 
 Happy forking!
+
+
+## Version history ##
+
+- v1.01: Edited the bottom of 'index.html' so that people looking to advertise or order custom maps know they can do so.
+- v1.0: Initial commit.
