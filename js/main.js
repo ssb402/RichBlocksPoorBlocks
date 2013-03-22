@@ -73,6 +73,7 @@ $(document).ready(function(){
 		// SECTION 4: Find the address once the button is clicked
 			var styleNum, legendScale, condition, fillO, dataType, errorType, infoWindow1;
 			var addressArr = [];
+			var stateArr = [];
 			var layer = null;
 			var infoWindow = new google.maps.InfoWindow();
 
@@ -110,6 +111,7 @@ $(document).ready(function(){
 						var tableId = states[selectedState]["tableId"];
 
 						addressArr.push(address);
+						stateArr.push(selectedState);
 						
 						if(mapTypeText==="Income"){
 							condition = 'median_hh_income > 0 AND error > 0';
@@ -172,7 +174,7 @@ $(document).ready(function(){
 							},
 							function(results,status){
 								if(status===google.maps.GeocoderStatus.OK){
-									if (addressArr[addressArr.length-2]!=addressArr[addressArr.length-1]){ // If the current address is different from the one entered previously, then the map will re-zoom and re-center itself. Or else, it won't -- the map colors, infoboxes, and legend will change, but not the location and zoom level.
+									if (stateArr[stateArr.length-2]!=stateArr[stateArr.length-1] || addressArr[addressArr.length-2]!=addressArr[addressArr.length-1]){ // If the current state or address is different from the one entered previously, then the map will re-zoom and re-center itself. Or else, it won't -- the map colors, infoboxes, and legend will change, but not the location and zoom level.
 										var addressSW = results[0].geometry.viewport.getSouthWest();
 										var addressNE = results[0].geometry.viewport.getNorthEast();
 										var bounds = new google.maps.LatLngBounds(addressSW,addressNE);
