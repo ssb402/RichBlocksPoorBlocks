@@ -1,1 +1,767 @@
-{"Alabama":{"tableId":"1JAdqX7rrofFxbc3tPUC1mXE9TBgikObnXNgsxQo","medianIncome":{"percent5":"16146","percent95":"74407.75","percent40":"35240","percent60":"42415"},"medianRent":{"percent5":"238.0","percent95":"820.0","percent40":"388.0","percent60":"470.0"}},"Alaska":{"tableId":"1juKOlTd7_M0DM9KH_6iknU5LrII4Sqo6QwHnKdo","medianIncome":{"percent5":"37110","percent95":"111293.2","percent40":"60707.8","percent60":"72207.2"},"medianRent":{"percent5":"317.0","percent95":"1248.0","percent40":"824.0","percent60":"905.0"}},"Arizona":{"tableId":"17ggYyuVgiKd7pA4Qb-ic89Yp0qEhcgy9KrCrcrk","medianIncome":{"percent5":"24350.6","percent95":"103419","percent40":"43421","percent60":"55819.2"},"medianRent":{"percent5":"418.0","percent95":"1288.0","percent40":"708.0","percent60":"852.0"}},"Arkansas":{"tableId":"1WcrBpT8nQHJzK7CdZi_p4LtqvwHtZXZatsj2XU8","medianIncome":{"percent5":"21444","percent95":"69254.5","percent40":"35282","percent60":"41537"},"medianRent":{"percent5":"260.0","percent95":"654.0","percent40":"382.0","percent60":"461.0"}},"California":{"tableId":"1nI-jotcxcPzXmJaAXsntIOMIaZxN9hWmzXFlze8","medianIncome":{"percent5":"28073","percent95":"125196.5","percent40":"53264","percent60":"68300"},"medianRent":{"percent5":"618.0","percent95":"1767.0","percent40":"996.0","percent60":"1193.0"}},"Colorado":{"tableId":"1FBBbUL4gazHGEKZEDJhRetGw7lXFCBKhpUqGLW4","medianIncome":{"percent5":"27075","percent95":"112187.5","percent40":"49735","percent60":"63438"},"medianRent":{"percent5":"456.0","percent95":"1433.0","percent40":"735.0","percent60":"875.0"}},"Connecticut":{"tableId":"1A-cEaM8vd9hFahGKljYh6sSFfmSdSp8iTI7uKCc","medianIncome":{"percent5":"21679.9","percent95":"136401.2","percent40":"62725","percent60":"77747.6"},"medianRent":{"percent5":"560.0","percent95":"1508.0","percent40":"815.0","percent60":"934.0"}},"Delaware":{"tableId":"1-bV-2uQwUx1To_qDUOd9txd_T5QNDKFlSpKCfwk","medianIncome":{"percent5":"24740.6","percent95":"118813.35","percent40":"52027","percent60":"64173.4"},"medianRent":{"percent5":"520.0","percent95":"1220.0","percent40":"748.0","percent60":"851.0"}},"District of Columbia":{"tableId":"18VtGJ6H0UZuoEqQx5m72ZvN-ylRxyFbQ8nu5bgw","medianIncome":{"percent5":"20965","percent95":"135403","percent40":"47878","percent60":"66352"},"medianRent":{"percent5":"438.0","percent95":"1547.0","percent40":"831.0","percent60":"1121.0"}},"Florida":{"tableId":"1EqEq9tPoSacKjMxhzZUaJAKuPZv9Bck89NahqXM","medianIncome":{"percent5":"24380.2","percent95":"93375","percent40":"42313.8","percent60":"51387"},"medianRent":{"percent5":"475.0","percent95":"1455.0","percent40":"771.0","percent60":"890.0"}},"Georgia":{"tableId":"1b7lzwmscvgKko2cgbwOdBBLUHTIouovgAoG8NV8","medianIncome":{"percent5":"20267","percent95":"99840.5","percent40":"40263","percent60":"50952"},"medianRent":{"percent5":"293.0","percent95":"1088.0","percent40":"547.0","percent60":"699.0"}},"Hawaii":{"tableId":"12jU5G0THhB7zhehgr8R5Q7PCE6tSNEnvWwwOCmI","medianIncome":{"percent5":"34132.8","percent95":"111701","percent40":"58085.4","percent60":"71487.2"},"medianRent":{"percent5":"547.0","percent95":"1813.0","percent40":"1060.0","percent60":"1236.0"}},"Idaho":{"tableId":"1eEWEDNqQ1rvff9C-AmPjlMDeBp8-m2JFdvWMo5I","medianIncome":{"percent5":"26971.25","percent95":"75154.2","percent40":"42141.6","percent60":"47878.4"},"medianRent":{"percent5":"357.0","percent95":"830.0","percent40":"522.0","percent60":"600.0"}},"Illinois":{"tableId":"1rGhYJFVVGNVp48a-R22g7Bslqn6yULDOi0NV05g","medianIncome":{"percent5":"22902.6","percent95":"108936.2","percent40":"48084.2","percent60":"59245.4"},"medianRent":{"percent5":"343.0","percent95":"1388.0","percent40":"644.0","percent60":"781.0"}},"Indiana":{"tableId":"1TOD5V5Z4IeVk1UnfW6ZB7tjyDtx02Zd1z2oehQU","medianIncome":{"percent5":"21656.5","percent95":"81116.5","percent40":"41780","percent60":"50218"},"medianRent":{"percent5":"363.7","percent95":"864.3","percent40":"503.0","percent60":"563.0"}},"Iowa":{"tableId":"1bKGZ99vtNDRFeVv7sMFwM4b6c6EReWBKGKj7qmQ","medianIncome":{"percent5":"27422.8","percent95":"78249.6","percent40":"46230.6","percent60":"52048.4"},"medianRent":{"percent5":"292.0","percent95":"772.0","percent40":"421.0","percent60":"486.0"}},"Kansas":{"tableId":"14eZ1m9GIKW6G8uVNOkyyjtBPFnMZOO1_p_ztaL4","medianIncome":{"percent5":"23481.85","percent95":"100177.25","percent40":"42757.2","percent60":"51132"},"medianRent":{"percent5":"285.0","percent95":"926.0","percent40":"440.0","percent60":"525.0"}},"Kentucky":{"tableId":"17Haa-Xpnb1npd_pJkzOok0yxTN26vF9CSKmhv-0","medianIncome":{"percent5":"19427.4","percent95":"83094.8","percent40":"35503.2","percent60":"43509.8"},"medianRent":{"percent5":"268.0","percent95":"796.0","percent40":"406.0","percent60":"493.0"}},"Louisiana":{"tableId":"1hg7RPGRxvusAOrHq3WfSQR01oZrMki_ez_jXwdM","medianIncome":{"percent5":"17143.95","percent95":"78345.25","percent40":"37011.6","percent60":"45216.4"},"medianRent":{"percent5":"254.0","percent95":"970.0","percent40":"487.0","percent60":"621.0"}},"Maine":{"tableId":"1FASmnFZsJP52hCgCq1f5vQhSmn-13oml1VjIPwM","medianIncome":{"percent5":"25347.6","percent95":"76129.05","percent40":"42325.8","percent60":"49051"},"medianRent":{"percent5":"342.0","percent95":"887.0","percent40":"568.0","percent60":"651.0"}},"Maryland":{"tableId":"19nI4HzTQIwHS_1yWedqdGo74tT4xmtMdpamBzRI","medianIncome":{"percent5":"26355.75","percent95":"140410.75","percent40":"63062.2","percent60":"79478.6"},"medianRent":{"percent5":"451.0","percent95":"1643.0","percent40":"877.0","percent60":"1072.0"}},"Massachusetts":{"tableId":"1ThV6K2W0NlqJVrG-zxxM4ewCcyHYvKT54i7V5nU","medianIncome":{"percent5":"20303.8","percent95":"125122","percent40":"59560.2","percent60":"73466.4"},"medianRent":{"percent5":"479.0","percent95":"1565.0","percent40":"838.0","percent60":"983.0"}},"Michigan":{"tableId":"1uQbyWI9ZvCKGA_YiBDy5v4rYmpActvVoZdm7etQ","medianIncome":{"percent5":"15959.6","percent95":"94665.4","percent40":"41545","percent60":"51250"},"medianRent":{"percent5":"388.0","percent95":"1100.0","percent40":"551.0","percent60":"641.0"}},"Minnesota":{"tableId":"1HwMjJA4ixAnA8rEvQ56Ffnh88sQ3O65l-109hTs","medianIncome":{"percent5":"29911.7","percent95":"105327.85","percent40":"49964.2","percent60":"60207"},"medianRent":{"percent5":"355.0","percent95":"1273.0","percent40":"609.0","percent60":"749.0"}},"Mississippi":{"tableId":"1SL-nUlLbmj4Lyh0xmRyBL_bFzos5NVlcxxioURU","medianIncome":{"percent5":"17989","percent95":"70779.4","percent40":"32695.2","percent60":"39224.4"},"medianRent":{"percent5":"244.35","percent95":"849.5","percent40":"389.6","percent60":"482.0"}},"Missouri":{"tableId":"1brugxXAe65iGEJSkZvJ0qKGSgqF3o5wlRSurZKQ","medianIncome":{"percent5":"22187.9","percent95":"91921.1","percent40":"40510.2","percent60":"47721"},"medianRent":{"percent5":"290.0","percent95":"908.0","percent40":"458.0","percent60":"550.0"}},"Montana":{"tableId":"1E97cw5YZK7bND-JsQuZP7LNsodJsXncH6IPnzb4","medianIncome":{"percent5":"27405.4","percent95":"69167.2","percent40":"40969.2","percent60":"46751.8"},"medianRent":{"percent5":"279.0","percent95":"785.0","percent40":"449.0","percent60":"535.0"}},"Nebraska":{"tableId":"1cgRtxWhG1Z3TMzo71sWkuGmadvzU29FawHv-fog","medianIncome":{"percent5":"26557.9","percent95":"99424.25","percent40":"44092.2","percent60":"52213.6"},"medianRent":{"percent5":"281.0","percent95":"971.0","percent40":"448.0","percent60":"550.0"}},"Nevada":{"tableId":"1sFT6HKbLP3btY9_OCNpoXD4u1Qucp5FS_5eX8ro","medianIncome":{"percent5":"26304.4","percent95":"99484.8","percent40":"50767.6","percent60":"62325.8"},"medianRent":{"percent5":"534.0","percent95":"1421.0","percent40":"851.0","percent60":"1019.0"}},"New Hampshire":{"tableId":"1mLPBS4-BIUN6GZURzcCz1Q4ahlZP0tCdl8Tuabw","medianIncome":{"percent5":"34383.6","percent95":"109455.6","percent40":"58328.4","percent60":"69505.4"},"medianRent":{"percent5":"540.0","percent95":"1213.0","percent40":"814.0","percent60":"877.0"}},"New Jersey":{"tableId":"1FPWxB7ZC2Suo-M2_JA_2ElPKy_LK6_1PfqtuJKk","medianIncome":{"percent5":"27487.85","percent95":"137220.4","percent40":"63101.8","percent60":"78762.6"},"medianRent":{"percent5":"616.0","percent95":"1624.0","percent40":"928.0","percent60":"1071.0"}},"New Mexico":{"tableId":"1PRgYVj07eDKdlVigvwhH5Hd48S5VyGBZFkmQeqA","medianIncome":{"percent5":"22513","percent95":"88625","percent40":"39224","percent60":"47937"},"medianRent":{"percent5":"280.0","percent95":"1027.0","percent40":"516.0","percent60":"623.0"}},"New York state":{"tableId":"1BdZ7fOMwC0RCnY4x1Y2pE9Mmmiz44fDMJ42dNv4","medianIncome":{"percent5":"22787.75","percent95":"117962.5","percent40":"50282","percent60":"63315"},"medianRent":{"percent5":"434.0","percent95":"1639.0","percent40":"812.0","percent60":"1013.0"}},"North Carolina":{"tableId":"18_Ac18-BlWZtvsH7VjPdoHm5flHSlj7l6BOlHiQ","medianIncome":{"percent5":"21407.6","percent95":"92711.4","percent40":"40368.6","percent60":"48942.2"},"medianRent":{"percent5":"336.0","percent95":"963.0","percent40":"499.0","percent60":"609.0"}},"North Dakota":{"tableId":"1-_Kk3ufy8rVElhA0b-ijsMAm9_FjVpQ_lJ2wvcg","medianIncome":{"percent5":"29828.8","percent95":"68280.8","percent40":"44120.6","percent60":"52629.6"},"medianRent":{"percent5":"223.0","percent95":"704.0","percent40":"384.0","percent60":"454.0"}},"Ohio":{"tableId":"1QNQU-13pqmxNXpHNhXeWkKwoO5TzKF6fuMmpliU","medianIncome":{"percent5":"18333","percent95":"89100","percent40":"40890","percent60":"50323"},"medianRent":{"percent5":"357.0","percent95":"904.0","percent40":"500.0","percent60":"567.0"}},"Oklahoma":{"tableId":"1zDDsc39sIRtz07rEnSCAt5MCfEvrkLGirttELas","medianIncome":{"percent5":"23308.35","percent95":"83086","percent40":"38815.6","percent60":"45762.6"},"medianRent":{"percent5":"269.0","percent95":"847.0","percent40":"423.0","percent60":"507.0"}},"Oregon":{"tableId":"1gakZy0JK5N56biuCQtEuWz4WCIfTeO76VjDQVkg","medianIncome":{"percent5":"26186.3","percent95":"88034.9","percent40":"44665.2","percent60":"52413.8"},"medianRent":{"percent5":"467.0","percent95":"1038.0","percent40":"674.0","percent60":"747.0"}},"Pennsylvania":{"tableId":"1gQRKej7gCjWsND9cGPGUjDcnGmJVCsLnS1wlhuk","medianIncome":{"percent5":"20953.2","percent95":"104254","percent40":"44750","percent60":"54425.4"},"medianRent":{"percent5":"353.0","percent95":"1163.0","percent40":"534.0","percent60":"651.0"}},"Rhode Island":{"tableId":"1kc7gthF7m37EHcBD55qTQ5lFNNEWoLmOBwRAtJI","medianIncome":{"percent5":"21979","percent95":"97779.5","percent40":"51943","percent60":"61317"},"medianRent":{"percent5":"520.0","percent95":"1043.0","percent40":"743.0","percent60":"828.0"}},"South Carolina":{"tableId":"1KxsK4L7SyhpN3r8DA4hix04OTAekkw79hVvuAyo","medianIncome":{"percent5":"19485.4","percent95":"81611.8","percent40":"37972","percent60":"45597.2"},"medianRent":{"percent5":"303.0","percent95":"1021.0","percent40":"473.0","percent60":"581.0"}},"South Dakota":{"tableId":"1GQPLP_mnUYtN_H8BRIPOTPr94UbgT_Ue6lBGVEU","medianIncome":{"percent5":"27198.2","percent95":"77362.9","percent40":"43199","percent60":"49866"},"medianRent":{"percent5":"174.0","percent95":"657.0","percent40":"369.0","percent60":"466.0"}},"Tennessee":{"tableId":"1FTBSPIqmtzibPzxX576JZJpyg9-lm1xI1-teBAQ","medianIncome":{"percent5":"19013.6","percent95":"87949.7","percent40":"37250","percent60":"44851.2"},"medianRent":{"percent5":"311.0","percent95":"926.0","percent40":"461.0","percent60":"556.0"}},"Texas":{"tableId":"1cmQyYEzagOvzvVieDGZaBcWT0E8TvC80DrA0d3o","medianIncome":{"percent5":"22287.4","percent95":"111789.2","percent40":"41896.2","percent60":"52500"},"medianRent":{"percent5":"324.0","percent95":"1205.0","percent40":"564.0","percent60":"675.0"}},"Utah":{"tableId":"1SObFUQqAYCMzAkCk3V5JWEv8V5JbZliqcBlEvFI","medianIncome":{"percent5":"29903.1","percent95":"104137.55","percent40":"53582.4","percent60":"62763"},"medianRent":{"percent5":"450.0","percent95":"1275.0","percent40":"689.0","percent60":"783.0"}},"Vermont":{"tableId":"1s9OePflPhv-fdtYd8VOqxLtscUgk5mmskMZClvg","medianIncome":{"percent5":"29715.75","percent95":"82179.75","percent40":"50750","percent60":"56203"},"medianRent":{"percent5":"499.0","percent95":"978.0","percent40":"680.0","percent60":"736.0"}},"Virginia":{"tableId":"1qj66Z-Q24NHEzbC_RbtJP_bKaRizmd6c_I-X8pI","medianIncome":{"percent5":"27483","percent95":"149845","percent40":"52273","percent60":"71433"},"medianRent":{"percent5":"337.0","percent95":"1721.0","percent40":"718.0","percent60":"934.2"}},"Washington state":{"tableId":"1c-pz8QUJoEav9icBklli1QOuoHZxXCmFyBvA6Bs","medianIncome":{"percent5":"29463.25","percent95":"105510.8","percent40":"52508.4","percent60":"64322.4"},"medianRent":{"percent5":"480.0","percent95":"1349.0","percent40":"761.6","percent60":"884.0"}},"West Virginia":{"tableId":"1DwYCAW8SjusXAX_ZwVLYq3LDv0PylYY3Fu8YasU","medianIncome":{"percent5":"21827.75","percent95":"64621.5","percent40":"35343","percent60":"40250"},"medianRent":{"percent5":"241.0","percent95":"657.0","percent40":"374.0","percent60":"424.0"}},"Wisconsin":{"tableId":"1LQDMI3mDYzaQokmbx4wNY8oTPbZtC8uw55dGrYM","medianIncome":{"percent5":"23265.5","percent95":"88176.5","percent40":"45795","percent60":"54345"},"medianRent":{"percent5":"405.0","percent95":"906.0","percent40":"547.0","percent60":"630.0"}},"Wyoming":{"tableId":"1BuItR5yClrwvmTkatePBlx-o2XHnN4CCzqaMJpw","medianIncome":{"percent5":"30557.1","percent95":"87333.6","percent40":"51210","percent60":"58487"},"medianRent":{"percent5":"338.0","percent95":"869.0","percent40":"521.0","percent60":"597.0"}}}
+{
+	"Alabama": {
+		"tableId": "1JAdqX7rrofFxbc3tPUC1mXE9TBgikObnXNgsxQo",
+		"medianIncome": {
+			"percent5": "16146",
+			"percent95": "74407.75",
+			"percent40": "35240",
+			"percent60": "42415"
+		},
+		"medianRent": {
+			"percent5": "238.0",
+			"percent95": "820.0",
+			"percent40": "388.0",
+			"percent60": "470.0"
+		}
+	},
+	"Alaska": {
+		"tableId": "1juKOlTd7_M0DM9KH_6iknU5LrII4Sqo6QwHnKdo",
+		"medianIncome": {
+			"percent5": "37110",
+			"percent95": "111293.2",
+			"percent40": "60707.8",
+			"percent60": "72207.2"
+		},
+		"medianRent": {
+			"percent5": "317.0",
+			"percent95": "1248.0",
+			"percent40": "824.0",
+			"percent60": "905.0"
+		}
+	},
+	"Arizona": {
+		"tableId": "17ggYyuVgiKd7pA4Qb-ic89Yp0qEhcgy9KrCrcrk",
+		"medianIncome": {
+			"percent5": "24350.6",
+			"percent95": "103419",
+			"percent40": "43421",
+			"percent60": "55819.2"
+		},
+		"medianRent": {
+			"percent5": "418.0",
+			"percent95": "1288.0",
+			"percent40": "708.0",
+			"percent60": "852.0"
+		}
+	},
+	"Arkansas": {
+		"tableId": "1WcrBpT8nQHJzK7CdZi_p4LtqvwHtZXZatsj2XU8",
+		"medianIncome": {
+			"percent5": "21444",
+			"percent95": "69254.5",
+			"percent40": "35282",
+			"percent60": "41537"
+		},
+		"medianRent": {
+			"percent5": "260.0",
+			"percent95": "654.0",
+			"percent40": "382.0",
+			"percent60": "461.0"
+		}
+	},
+	"California": {
+		"tableId": "1nI-jotcxcPzXmJaAXsntIOMIaZxN9hWmzXFlze8",
+		"medianIncome": {
+			"percent5": "28073",
+			"percent95": "125196.5",
+			"percent40": "53264",
+			"percent60": "68300"
+		},
+		"medianRent": {
+			"percent5": "618.0",
+			"percent95": "1767.0",
+			"percent40": "996.0",
+			"percent60": "1193.0"
+		}
+	},
+	"Colorado": {
+		"tableId": "1FBBbUL4gazHGEKZEDJhRetGw7lXFCBKhpUqGLW4",
+		"medianIncome": {
+			"percent5": "27075",
+			"percent95": "112187.5",
+			"percent40": "49735",
+			"percent60": "63438"
+		},
+		"medianRent": {
+			"percent5": "456.0",
+			"percent95": "1433.0",
+			"percent40": "735.0",
+			"percent60": "875.0"
+		}
+	},
+	"Connecticut": {
+		"tableId": "1A-cEaM8vd9hFahGKljYh6sSFfmSdSp8iTI7uKCc",
+		"medianIncome": {
+			"percent5": "21679.9",
+			"percent95": "136401.2",
+			"percent40": "62725",
+			"percent60": "77747.6"
+		},
+		"medianRent": {
+			"percent5": "560.0",
+			"percent95": "1508.0",
+			"percent40": "815.0",
+			"percent60": "934.0"
+		}
+	},
+	"Delaware": {
+		"tableId": "1-bV-2uQwUx1To_qDUOd9txd_T5QNDKFlSpKCfwk",
+		"medianIncome": {
+			"percent5": "24740.6",
+			"percent95": "118813.35",
+			"percent40": "52027",
+			"percent60": "64173.4"
+		},
+		"medianRent": {
+			"percent5": "520.0",
+			"percent95": "1220.0",
+			"percent40": "748.0",
+			"percent60": "851.0"
+		}
+	},
+	"District of Columbia": {
+		"tableId": "18VtGJ6H0UZuoEqQx5m72ZvN-ylRxyFbQ8nu5bgw",
+		"medianIncome": {
+			"percent5": "20965",
+			"percent95": "135403",
+			"percent40": "47878",
+			"percent60": "66352"
+		},
+		"medianRent": {
+			"percent5": "438.0",
+			"percent95": "1547.0",
+			"percent40": "831.0",
+			"percent60": "1121.0"
+		}
+	},
+	"Florida": {
+		"tableId": "1EqEq9tPoSacKjMxhzZUaJAKuPZv9Bck89NahqXM",
+		"medianIncome": {
+			"percent5": "24380.2",
+			"percent95": "93375",
+			"percent40": "42313.8",
+			"percent60": "51387"
+		},
+		"medianRent": {
+			"percent5": "475.0",
+			"percent95": "1455.0",
+			"percent40": "771.0",
+			"percent60": "890.0"
+		}
+	},
+	"Georgia": {
+		"tableId": "1b7lzwmscvgKko2cgbwOdBBLUHTIouovgAoG8NV8",
+		"medianIncome": {
+			"percent5": "20267",
+			"percent95": "99840.5",
+			"percent40": "40263",
+			"percent60": "50952"
+		},
+		"medianRent": {
+			"percent5": "293.0",
+			"percent95": "1088.0",
+			"percent40": "547.0",
+			"percent60": "699.0"
+		}
+	},
+	"Hawaii": {
+		"tableId": "12jU5G0THhB7zhehgr8R5Q7PCE6tSNEnvWwwOCmI",
+		"medianIncome": {
+			"percent5": "34132.8",
+			"percent95": "111701",
+			"percent40": "58085.4",
+			"percent60": "71487.2"
+		},
+		"medianRent": {
+			"percent5": "547.0",
+			"percent95": "1813.0",
+			"percent40": "1060.0",
+			"percent60": "1236.0"
+		}
+	},
+	"Idaho": {
+		"tableId": "1eEWEDNqQ1rvff9C-AmPjlMDeBp8-m2JFdvWMo5I",
+		"medianIncome": {
+			"percent5": "26971.25",
+			"percent95": "75154.2",
+			"percent40": "42141.6",
+			"percent60": "47878.4"
+		},
+		"medianRent": {
+			"percent5": "357.0",
+			"percent95": "830.0",
+			"percent40": "522.0",
+			"percent60": "600.0"
+		}
+	},
+	"Illinois": {
+		"tableId": "1rGhYJFVVGNVp48a-R22g7Bslqn6yULDOi0NV05g",
+		"medianIncome": {
+			"percent5": "22902.6",
+			"percent95": "108936.2",
+			"percent40": "48084.2",
+			"percent60": "59245.4"
+		},
+		"medianRent": {
+			"percent5": "343.0",
+			"percent95": "1388.0",
+			"percent40": "644.0",
+			"percent60": "781.0"
+		}
+	},
+	"Indiana": {
+		"tableId": "1TOD5V5Z4IeVk1UnfW6ZB7tjyDtx02Zd1z2oehQU",
+		"medianIncome": {
+			"percent5": "21656.5",
+			"percent95": "81116.5",
+			"percent40": "41780",
+			"percent60": "50218"
+		},
+		"medianRent": {
+			"percent5": "363.7",
+			"percent95": "864.3",
+			"percent40": "503.0",
+			"percent60": "563.0"
+		}
+	},
+	"Iowa": {
+		"tableId": "1bKGZ99vtNDRFeVv7sMFwM4b6c6EReWBKGKj7qmQ",
+		"medianIncome": {
+			"percent5": "27422.8",
+			"percent95": "78249.6",
+			"percent40": "46230.6",
+			"percent60": "52048.4"
+		},
+		"medianRent": {
+			"percent5": "292.0",
+			"percent95": "772.0",
+			"percent40": "421.0",
+			"percent60": "486.0"
+		}
+	},
+	"Kansas": {
+		"tableId": "14eZ1m9GIKW6G8uVNOkyyjtBPFnMZOO1_p_ztaL4",
+		"medianIncome": {
+			"percent5": "23481.85",
+			"percent95": "100177.25",
+			"percent40": "42757.2",
+			"percent60": "51132"
+		},
+		"medianRent": {
+			"percent5": "285.0",
+			"percent95": "926.0",
+			"percent40": "440.0",
+			"percent60": "525.0"
+		}
+	},
+	"Kentucky": {
+		"tableId": "17Haa-Xpnb1npd_pJkzOok0yxTN26vF9CSKmhv-0",
+		"medianIncome": {
+			"percent5": "19427.4",
+			"percent95": "83094.8",
+			"percent40": "35503.2",
+			"percent60": "43509.8"
+		},
+		"medianRent": {
+			"percent5": "268.0",
+			"percent95": "796.0",
+			"percent40": "406.0",
+			"percent60": "493.0"
+		}
+	},
+	"Louisiana": {
+		"tableId": "1hg7RPGRxvusAOrHq3WfSQR01oZrMki_ez_jXwdM",
+		"medianIncome": {
+			"percent5": "17143.95",
+			"percent95": "78345.25",
+			"percent40": "37011.6",
+			"percent60": "45216.4"
+		},
+		"medianRent": {
+			"percent5": "254.0",
+			"percent95": "970.0",
+			"percent40": "487.0",
+			"percent60": "621.0"
+		}
+	},
+	"Maine": {
+		"tableId": "1FASmnFZsJP52hCgCq1f5vQhSmn-13oml1VjIPwM",
+		"medianIncome": {
+			"percent5": "25347.6",
+			"percent95": "76129.05",
+			"percent40": "42325.8",
+			"percent60": "49051"
+		},
+		"medianRent": {
+			"percent5": "342.0",
+			"percent95": "887.0",
+			"percent40": "568.0",
+			"percent60": "651.0"
+		}
+	},
+	"Maryland": {
+		"tableId": "19nI4HzTQIwHS_1yWedqdGo74tT4xmtMdpamBzRI",
+		"medianIncome": {
+			"percent5": "26355.75",
+			"percent95": "140410.75",
+			"percent40": "63062.2",
+			"percent60": "79478.6"
+		},
+		"medianRent": {
+			"percent5": "451.0",
+			"percent95": "1643.0",
+			"percent40": "877.0",
+			"percent60": "1072.0"
+		}
+	},
+	"Massachussets": {
+		"tableId": "1ThV6K2W0NlqJVrG-zxxM4ewCcyHYvKT54i7V5nU",
+		"medianIncome": {
+			"percent5": "20303.8",
+			"percent95": "125122",
+			"percent40": "59560.2",
+			"percent60": "73466.4"
+		},
+		"medianRent": {
+			"percent5": "479.0",
+			"percent95": "1565.0",
+			"percent40": "838.0",
+			"percent60": "983.0"
+		}
+	},
+	"Michigan": {
+		"tableId": "1uQbyWI9ZvCKGA_YiBDy5v4rYmpActvVoZdm7etQ",
+		"medianIncome": {
+			"percent5": "15959.6",
+			"percent95": "94665.4",
+			"percent40": "41545",
+			"percent60": "51250"
+		},
+		"medianRent": {
+			"percent5": "388.0",
+			"percent95": "1100.0",
+			"percent40": "551.0",
+			"percent60": "641.0"
+		}
+	},
+	"Minnesota": {
+		"tableId": "1HwMjJA4ixAnA8rEvQ56Ffnh88sQ3O65l-109hTs",
+		"medianIncome": {
+			"percent5": "29911.7",
+			"percent95": "105327.85",
+			"percent40": "49964.2",
+			"percent60": "60207"
+		},
+		"medianRent": {
+			"percent5": "355.0",
+			"percent95": "1273.0",
+			"percent40": "609.0",
+			"percent60": "749.0"
+		}
+	},
+	"Mississippi": {
+		"tableId": "1SL-nUlLbmj4Lyh0xmRyBL_bFzos5NVlcxxioURU",
+		"medianIncome": {
+			"percent5": "17989",
+			"percent95": "70779.4",
+			"percent40": "32695.2",
+			"percent60": "39224.4"
+		},
+		"medianRent": {
+			"percent5": "244.35",
+			"percent95": "849.5",
+			"percent40": "389.6",
+			"percent60": "482.0"
+		}
+	},
+	"Missouri": {
+		"tableId": "1brugxXAe65iGEJSkZvJ0qKGSgqF3o5wlRSurZKQ",
+		"medianIncome": {
+			"percent5": "22187.9",
+			"percent95": "91921.1",
+			"percent40": "40510.2",
+			"percent60": "47721"
+		},
+		"medianRent": {
+			"percent5": "290.0",
+			"percent95": "908.0",
+			"percent40": "458.0",
+			"percent60": "550.0"
+		}
+	},
+	"Montana": {
+		"tableId": "1E97cw5YZK7bND-JsQuZP7LNsodJsXncH6IPnzb4",
+		"medianIncome": {
+			"percent5": "27405.4",
+			"percent95": "69167.2",
+			"percent40": "40969.2",
+			"percent60": "46751.8"
+		},
+		"medianRent": {
+			"percent5": "279.0",
+			"percent95": "785.0",
+			"percent40": "449.0",
+			"percent60": "535.0"
+		}
+	},
+	"Nebraska": {
+		"tableId": "1cgRtxWhG1Z3TMzo71sWkuGmadvzU29FawHv-fog",
+		"medianIncome": {
+			"percent5": "26557.9",
+			"percent95": "99424.25",
+			"percent40": "44092.2",
+			"percent60": "52213.6"
+		},
+		"medianRent": {
+			"percent5": "281.0",
+			"percent95": "971.0",
+			"percent40": "448.0",
+			"percent60": "550.0"
+		}
+	},
+	"Nevada": {
+		"tableId": "1sFT6HKbLP3btY9_OCNpoXD4u1Qucp5FS_5eX8ro",
+		"medianIncome": {
+			"percent5": "26304.4",
+			"percent95": "99484.8",
+			"percent40": "50767.6",
+			"percent60": "62325.8"
+		},
+		"medianRent": {
+			"percent5": "534.0",
+			"percent95": "1421.0",
+			"percent40": "851.0",
+			"percent60": "1019.0"
+		}
+	},
+	"New Hampshire": {
+		"tableId": "1mLPBS4-BIUN6GZURzcCz1Q4ahlZP0tCdl8Tuabw",
+		"medianIncome": {
+			"percent5": "34383.6",
+			"percent95": "109455.6",
+			"percent40": "58328.4",
+			"percent60": "69505.4"
+		},
+		"medianRent": {
+			"percent5": "540.0",
+			"percent95": "1213.0",
+			"percent40": "814.0",
+			"percent60": "877.0"
+		}
+	},
+	"New Jersey": {
+		"tableId": "1FPWxB7ZC2Suo-M2_JA_2ElPKy_LK6_1PfqtuJKk",
+		"medianIncome": {
+			"percent5": "27487.85",
+			"percent95": "137220.4",
+			"percent40": "63101.8",
+			"percent60": "78762.6"
+		},
+		"medianRent": {
+			"percent5": "616.0",
+			"percent95": "1624.0",
+			"percent40": "928.0",
+			"percent60": "1071.0"
+		}
+	},
+	"New Mexico": {
+		"tableId": "1PRgYVj07eDKdlVigvwhH5Hd48S5VyGBZFkmQeqA",
+		"medianIncome": {
+			"percent5": "22513",
+			"percent95": "88625",
+			"percent40": "39224",
+			"percent60": "47937"
+		},
+		"medianRent": {
+			"percent5": "280.0",
+			"percent95": "1027.0",
+			"percent40": "516.0",
+			"percent60": "623.0"
+		}
+	},
+	"New York state": {
+		"tableId": "1BdZ7fOMwC0RCnY4x1Y2pE9Mmmiz44fDMJ42dNv4",
+		"medianIncome": {
+			"percent5": "22787.75",
+			"percent95": "117962.5",
+			"percent40": "50282",
+			"percent60": "63315"
+		},
+		"medianRent": {
+			"percent5": "434.0",
+			"percent95": "1639.0",
+			"percent40": "812.0",
+			"percent60": "1013.0"
+		}
+	},
+	"North Carolina": {
+		"tableId": "18_Ac18-BlWZtvsH7VjPdoHm5flHSlj7l6BOlHiQ",
+		"medianIncome": {
+			"percent5": "21407.6",
+			"percent95": "92711.4",
+			"percent40": "40368.6",
+			"percent60": "48942.2"
+		},
+		"medianRent": {
+			"percent5": "336.0",
+			"percent95": "963.0",
+			"percent40": "499.0",
+			"percent60": "609.0"
+		}
+	},
+	"North Dakota": {
+		"tableId": "1-_Kk3ufy8rVElhA0b-ijsMAm9_FjVpQ_lJ2wvcg",
+		"medianIncome": {
+			"percent5": "29828.8",
+			"percent95": "68280.8",
+			"percent40": "44120.6",
+			"percent60": "52629.6"
+		},
+		"medianRent": {
+			"percent5": "223.0",
+			"percent95": "704.0",
+			"percent40": "384.0",
+			"percent60": "454.0"
+		}
+	},
+	"Ohio": {
+		"tableId": "1QNQU-13pqmxNXpHNhXeWkKwoO5TzKF6fuMmpliU",
+		"medianIncome": {
+			"percent5": "18333",
+			"percent95": "89100",
+			"percent40": "40890",
+			"percent60": "50323"
+		},
+		"medianRent": {
+			"percent5": "357.0",
+			"percent95": "904.0",
+			"percent40": "500.0",
+			"percent60": "567.0"
+		}
+	},
+	"Oklahoma": {
+		"tableId": "1zDDsc39sIRtz07rEnSCAt5MCfEvrkLGirttELas",
+		"medianIncome": {
+			"percent5": "23308.35",
+			"percent95": "83086",
+			"percent40": "38815.6",
+			"percent60": "45762.6"
+		},
+		"medianRent": {
+			"percent5": "269.0",
+			"percent95": "847.0",
+			"percent40": "423.0",
+			"percent60": "507.0"
+		}
+	},
+	"Oregon": {
+		"tableId": "1gakZy0JK5N56biuCQtEuWz4WCIfTeO76VjDQVkg",
+		"medianIncome": {
+			"percent5": "26186.3",
+			"percent95": "88034.9",
+			"percent40": "44665.2",
+			"percent60": "52413.8"
+		},
+		"medianRent": {
+			"percent5": "467.0",
+			"percent95": "1038.0",
+			"percent40": "674.0",
+			"percent60": "747.0"
+		}
+	},
+	"Pennslyvania": {
+		"tableId": "1gQRKej7gCjWsND9cGPGUjDcnGmJVCsLnS1wlhuk",
+		"medianIncome": {
+			"percent5": "20953.2",
+			"percent95": "104254",
+			"percent40": "44750",
+			"percent60": "54425.4"
+		},
+		"medianRent": {
+			"percent5": "353.0",
+			"percent95": "1163.0",
+			"percent40": "534.0",
+			"percent60": "651.0"
+		}
+	},
+	"Rhode Island": {
+		"tableId": "1kc7gthF7m37EHcBD55qTQ5lFNNEWoLmOBwRAtJI",
+		"medianIncome": {
+			"percent5": "21979",
+			"percent95": "97779.5",
+			"percent40": "51943",
+			"percent60": "61317"
+		},
+		"medianRent": {
+			"percent5": "520.0",
+			"percent95": "1043.0",
+			"percent40": "743.0",
+			"percent60": "828.0"
+		}
+	},
+	"South Carolina": {
+		"tableId": "1KxsK4L7SyhpN3r8DA4hix04OTAekkw79hVvuAyo",
+		"medianIncome": {
+			"percent5": "19485.4",
+			"percent95": "81611.8",
+			"percent40": "37972",
+			"percent60": "45597.2"
+		},
+		"medianRent": {
+			"percent5": "303.0",
+			"percent95": "1021.0",
+			"percent40": "473.0",
+			"percent60": "581.0"
+		}
+	},
+	"South Dakota": {
+		"tableId": "1GQPLP_mnUYtN_H8BRIPOTPr94UbgT_Ue6lBGVEU",
+		"medianIncome": {
+			"percent5": "27198.2",
+			"percent95": "77362.9",
+			"percent40": "43199",
+			"percent60": "49866"
+		},
+		"medianRent": {
+			"percent5": "174.0",
+			"percent95": "657.0",
+			"percent40": "369.0",
+			"percent60": "466.0"
+		}
+	},
+	"Tennessee": {
+		"tableId": "1FTBSPIqmtzibPzxX576JZJpyg9-lm1xI1-teBAQ",
+		"medianIncome": {
+			"percent5": "19013.6",
+			"percent95": "87949.7",
+			"percent40": "37250",
+			"percent60": "44851.2"
+		},
+		"medianRent": {
+			"percent5": "311.0",
+			"percent95": "926.0",
+			"percent40": "461.0",
+			"percent60": "556.0"
+		}
+	},
+	"Texas": {
+		"tableId": "1cmQyYEzagOvzvVieDGZaBcWT0E8TvC80DrA0d3o",
+		"medianIncome": {
+			"percent5": "22287.4",
+			"percent95": "111789.2",
+			"percent40": "41896.2",
+			"percent60": "52500"
+		},
+		"medianRent": {
+			"percent5": "324.0",
+			"percent95": "1205.0",
+			"percent40": "564.0",
+			"percent60": "675.0"
+		}
+	},
+	"Utah": {
+		"tableId": "1SObFUQqAYCMzAkCk3V5JWEv8V5JbZliqcBlEvFI",
+		"medianIncome": {
+			"percent5": "29903.1",
+			"percent95": "104137.55",
+			"percent40": "53582.4",
+			"percent60": "62763"
+		},
+		"medianRent": {
+			"percent5": "450.0",
+			"percent95": "1275.0",
+			"percent40": "689.0",
+			"percent60": "783.0"
+		}
+	},
+	"Vermont": {
+		"tableId": "1s9OePflPhv-fdtYd8VOqxLtscUgk5mmskMZClvg",
+		"medianIncome": {
+			"percent5": "29715.75",
+			"percent95": "82179.75",
+			"percent40": "50750",
+			"percent60": "56203"
+		},
+		"medianRent": {
+			"percent5": "499.0",
+			"percent95": "978.0",
+			"percent40": "680.0",
+			"percent60": "736.0"
+		}
+	},
+	"Virginia": {
+		"tableId": "1qj66Z-Q24NHEzbC_RbtJP_bKaRizmd6c_I-X8pI",
+		"medianIncome": {
+			"percent5": "27483",
+			"percent95": "149845",
+			"percent40": "52273",
+			"percent60": "71433"
+		},
+		"medianRent": {
+			"percent5": "337.0",
+			"percent95": "1721.0",
+			"percent40": "718.0",
+			"percent60": "934.2"
+		}
+	},
+	"Washington state": {
+		"tableId": "1c-pz8QUJoEav9icBklli1QOuoHZxXCmFyBvA6Bs",
+		"medianIncome": {
+			"percent5": "29463.25",
+			"percent95": "105510.8",
+			"percent40": "52508.4",
+			"percent60": "64322.4"
+		},
+		"medianRent": {
+			"percent5": "480.0",
+			"percent95": "1349.0",
+			"percent40": "761.6",
+			"percent60": "884.0"
+		}
+	},
+	"West Virginia": {
+		"tableId": "1DwYCAW8SjusXAX_ZwVLYq3LDv0PylYY3Fu8YasU",
+		"medianIncome": {
+			"percent5": "21827.75",
+			"percent95": "64621.5",
+			"percent40": "35343",
+			"percent60": "40250"
+		},
+		"medianRent": {
+			"percent5": "241.0",
+			"percent95": "657.0",
+			"percent40": "374.0",
+			"percent60": "424.0"
+		}
+	},
+	"Wisconsin": {
+		"tableId": "1LQDMI3mDYzaQokmbx4wNY8oTPbZtC8uw55dGrYM",
+		"medianIncome": {
+			"percent5": "23265.5",
+			"percent95": "88176.5",
+			"percent40": "45795",
+			"percent60": "54345"
+		},
+		"medianRent": {
+			"percent5": "405.0",
+			"percent95": "906.0",
+			"percent40": "547.0",
+			"percent60": "630.0"
+		}
+	},
+	"Wyoming": {
+		"tableId": "1BuItR5yClrwvmTkatePBlx-o2XHnN4CCzqaMJpw",
+		"medianIncome": {
+			"percent5": "30557.1",
+			"percent95": "87333.6",
+			"percent40": "51210",
+			"percent60": "58487"
+		},
+		"medianRent": {
+			"percent5": "338.0",
+			"percent95": "869.0",
+			"percent40": "521.0",
+			"percent60": "597.0"
+		}
+	}
+}
