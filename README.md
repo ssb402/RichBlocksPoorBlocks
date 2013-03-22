@@ -8,6 +8,15 @@ This is the code currently used on the website [Rich Blocks, Poor Blocks](http:/
 For non-minified code, check this repository's ['develop'](https://github.com/myprogprojects/RichBlocksPoorBlocks/tree/develop) branch.
 
 
+## Forking guidelines ##
+
+If you think you can make [RichBlocksPoorBlocks.com](http://www.RichBlocksPoorBlocks.com) even better than it currently is, then fork this branch and prove it. If your idea rocks, you'll get credit on the homepage, as well as a link back to your site (or blog, or social media page, or whatever else).
+
+If you do fork this branch, it would be mighty nice of you to name your repo 'RichBlocksPoorBlocks_{YOUR_IDEA_HERE}'. That way, it'll be easier for everyone to keep track of what everyone else is doing.
+
+For more info on Git branching practices, check [this article](http://nvie.com/posts/a-successful-git-branching-model/) on Git workflow.
+
+
 ## Programs and languages used to make this ##
 
 - HTML, CSS, JavaScript, and Google Fusion Tables.
