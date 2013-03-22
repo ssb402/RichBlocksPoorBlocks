@@ -1,37 +1,35 @@
-// v1.11
+// v1.2
 $(document).ready(function(){
 	$.getJSON("./js/states_pretty.JSON",function(states){
-		var styleNum, legendScale, condition, fillO, dataType, errorType, infoWindow1;
 		// SECTION 1: ADDING HTML TO DOM
-		// Append state names to the dropdown menu
-		var optionTag = ['<option value="','">','</option>'];
-		var stateSelect = $('#state-select');
+			// Append state names to the dropdown menu
+			var optionTag = ['<option value="','">','</option>'];
+			var stateSelect = $('#state-select');
 
-		for (var state in states){
-			if (state==='Washington state' || state==='New York state') {
-				stateSelect.append(optionTag[0] + state + optionTag[1] +state.replace(' state','')+ optionTag[2]);
-			} else{
-				stateSelect.append(optionTag[0] + state + optionTag[1] + state + optionTag[2]);
-			}; // DONE: if (state==='Washington state' || state==='New York state')
-		}; // DONE: for (var state in states)
+			for (var state in states){
+				if (state==='Washington state' || state==='New York state') {
+					stateSelect.append(optionTag[0] + state + optionTag[1] +state.replace(' state','')+ optionTag[2]);
+				} else{
+					stateSelect.append(optionTag[0] + state + optionTag[1] + state + optionTag[2]);
+				}; // DONE: if (state==='Washington state' || state==='New York state')
+			}; // DONE: for (var state in states)
 
-		// Append map types to the second dropdown menu
-		var mapTypeSelect = $('#map-type-select');
-		var mapTypes = ['Income','Rent'];
+			// Append map types to the second dropdown menu
+			var mapTypeSelect = $('#map-type-select');
+			var mapTypes = ['Income','Rent'];
 
-		for (var i=0; i<mapTypes.length; i++){
-			mapTypeSelect.append(optionTag[0] + mapTypes[i] + optionTag[1] + mapTypes[i] + optionTag[2]);
-		}; // DONE: for (var i=0; i<mapTypes.length; i++)
-		// DONE ADDING HTML TO DOM
+			for (var i=0; i<mapTypes.length; i++){
+				mapTypeSelect.append(optionTag[0] + mapTypes[i] + optionTag[1] + mapTypes[i] + optionTag[2]);
+			}; // DONE: for (var i=0; i<mapTypes.length; i++)
+		// DONE: SECTION 1
 
+		// SECTION 2: DEFINE THE FUNCTION THAT, WHEN CALLED, WILL LOAD A GOOGLE MAP CENTERED ON THE UNITED STATES
+			var geocoder,gmap;
+			var mapOptions = {
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
 
-		// SECTION 2: Create the Google map with the coordinates and add the Fusion Tables layer to it. Plus, it zooms and centers to whatever state is selected.
-		var geocoder,gmap;
-		var mapOptions = {
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-
-		function initialize(){
+			function initialize(){
 				geocoder = new google.maps.Geocoder(); // This variables is used to automate zooming and centering in this script
 				gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); // Removing this removes the Google Maps layer -- but would it keep any layers on top of it?
 
@@ -47,9 +45,12 @@ $(document).ready(function(){
 						gmap.fitBounds(bounds)
 					} // DONE: function(results,status)
 				); // DONE: geocoder.geocode
+			} // DONE: function initialize()
 
+			google.maps.event.addDomListener(window, 'load', initialize); // Calls function initialize()
+		// DONE: SECTION 2
 
-			// SECTION 2.1: The 'Change Map Size' button
+		// SECTION 3: The 'Change Map Size' button
 			$('#button-mapsize').click(
 				function changeMapSize(){
 					var slideToggleArr = ['h1','h2','#note']; // These are the DOM elements that will be hidden or shown when the 'Change Map Size' button is clicked
@@ -66,14 +67,14 @@ $(document).ready(function(){
 						mapCanvas.animate({height:'75%'});
 					};					
 				}
-			);
+			); // DONE: $('#button-mapsize').click()
+		// DONE: SECTION 3
 
-
-			// SECTION 3: Find the address once the button is clicked
+		// SECTION 4: Find the address once the button is clicked
+			var styleNum, legendScale, condition, fillO, dataType, errorType, infoWindow1;
+			var addressArr = [];
 			var layer = null;
 			var infoWindow = new google.maps.InfoWindow();
-			var searchCount = 0;
-			var colorblindChecked = $('input[name=colorblind]:checked').val();
 
 			$('#button-search').click(
 				function codeAddress(){
@@ -97,10 +98,8 @@ $(document).ready(function(){
 
 					// var styledMapType = new google.maps.StyledMapType(style, styleObj);
 
-					searchCount += 1; // If this variable is greater than zero, the function in 'mapTypeSelect.change()' will run
-
-					var stateSelectText = $("#state-select option:selected").text();
-					var mapTypeText = $('#map-type-select option:selected').text();
+					var stateSelectText = $("#state-select option:selected").text(); // The state that is selected in the dropdown menu
+					var mapTypeText = $('#map-type-select option:selected').text(); // THe map option (e.g., 'income', 'rent') that is selected in its dropdown menu
 					if (stateSelectText==="PICK A STATE" || mapTypeText==="PICK MAP TYPE"){ // Safeguard against clicking "Search" without picking a state or map type
 						alert("Please pick a state and map type, then click \"Search\"");
 					} else {
@@ -110,9 +109,11 @@ $(document).ready(function(){
 						var locationColumn = 'geometry';
 						var tableId = states[selectedState]["tableId"];
 
+						addressArr.push(address);
+						
 						if(mapTypeText==="Income"){
 							condition = 'median_hh_income > 0 AND error > 0';
-							if (colorblindChecked==="colorblind") { // Colorblind option
+							if ($('input[name=colorblind]:checked').val()==="colorblind") { // Colorblind option
 								styleNum = 3;
 								legendScale = 'styleNum3.png';
 							} else {
@@ -171,10 +172,13 @@ $(document).ready(function(){
 							},
 							function(results,status){
 								if(status===google.maps.GeocoderStatus.OK){
-									var addressSW = results[0].geometry.viewport.getSouthWest();
-									var addressNE = results[0].geometry.viewport.getNorthEast();
-									var bounds = new google.maps.LatLngBounds(addressSW,addressNE);
-									gmap.fitBounds(bounds);
+									if (addressArr[addressArr.length-2]!=addressArr[addressArr.length-1]){ // If the current address is different from the one entered previously, then the map will re-zoom and re-center itself. Or else, it won't -- the map colors, infoboxes, and legend will change, but not the location and zoom level.
+										var addressSW = results[0].geometry.viewport.getSouthWest();
+										var addressNE = results[0].geometry.viewport.getNorthEast();
+										var bounds = new google.maps.LatLngBounds(addressSW,addressNE);
+										gmap.fitBounds(bounds);
+									}; // DONE: if (addressArr[addressArr.length-2]!=addressArr[addressArr.length-1])
+									
 
 									// Before the first time ':button' runs, 'layer' should be null. This if/else statement is to make sure only one FT map is on the map at a time.
 									if (layer===null) {
@@ -241,32 +245,6 @@ $(document).ready(function(){
 					}; // DONE: if ($("#state-select option:selected").text()==="PICK A STATE")
 				} // DONE: function codeAddress()
 			); // DONE: $(':button').click()
-
-
-			// SECTION 4: Change the map type once the map type is changed in the map type dropdown.
-			mapTypeSelect.change(
-				function() {
-					if (searchCount>0){
-						var option = $(this).val();
-
-						if (option==='Income') {
-							if (colorblindChecked==='colorblind'){
-								styleNum = 3;
-							} else {
-								styleNum = 2;
-							};
-						} else if(option==='Rent'){
-							styleNum = 4;
-						}; // DONE: if (option==='Income')
-
-						layer.setOptions({
-							styleId: styleNum
-						});					
-					}; // DONE: if (searchCount>0)
-
-				}
-			);
-		} // DONE: function initialize()
-		google.maps.event.addDomListener(window, 'load', initialize);
+		// DONE: SECTION 4
 	}); // DONE: $.getJSON()
 }); // DONE: $(document).ready()
