@@ -1,4 +1,4 @@
-// v1.2
+// v1.2.1
 $(document).ready(function(){
 	$.getJSON("./js/states_pretty.JSON",function(states){
 		// SECTION 1: ADDING HTML TO DOM
@@ -98,9 +98,12 @@ $(document).ready(function(){
 					// };
 
 					// var styledMapType = new google.maps.StyledMapType(style, styleObj);
-
+					
 					var stateSelectText = $("#state-select option:selected").text(); // The state that is selected in the dropdown menu
 					var mapTypeText = $('#map-type-select option:selected').text(); // THe map option (e.g., 'income', 'rent') that is selected in its dropdown menu
+					
+					infoWindow.close(); // Closes any open infoWindows when the "Search" button is clicked
+
 					if (stateSelectText==="PICK A STATE" || mapTypeText==="PICK MAP TYPE"){ // Safeguard against clicking "Search" without picking a state or map type
 						alert("Please pick a state and map type, then click \"Search\"");
 					} else {
