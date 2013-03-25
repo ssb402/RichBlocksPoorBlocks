@@ -1,5 +1,5 @@
-Rich Blocks, Poor Blocks v1.2
-=============================
+Rich Blocks, Poor Blocks v1.2.1
+===============================
 
 ## What is this? ##
 
