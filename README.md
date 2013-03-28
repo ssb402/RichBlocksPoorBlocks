@@ -1,13 +1,13 @@
-Rich Blocks, Poor Blocks v1.2.1
+Rich Blocks, Poor Blocks v1.2.2
 ================================
 
 ## What is this? ##
 
 This repository contains code currently used on the website [Rich Blocks, Poor Blocks](http://www.RichBlocksPoorBlocks.com).
 
-The live code is on the 'master' branch. It is minified.
+The live code is on the 'master' branch in the 'LIVE CODE' folder. It is minified.
 
-If you'd like to fork this project, check the ['develop'](https://github.com/myprogprojects/RichBlocksPoorBlocks/tree/develop) branch for non-minified code.
+If you'd like to fork this project, fork the ['develop'](https://github.com/myprogprojects/RichBlocksPoorBlocks/tree/develop) branch.
 
 
 ## Forking guidelines ##
@@ -52,6 +52,8 @@ Questions? Email RichBlocksPoorBlocks@gmail.com, tweet [@RichBlocksPoorB](http:/
 
 ## Version History ##
 
+- v1.2.2: Minor README.md updates.
+- v1.2.1: Minor README.md updates.
 - v1.2: Edited 'main.js' so that if a user changes the map type then clicks 'Search' without changing the address and state, then the map layer, infobox and legend will change without the map re-zooming and re-centering itself.
 - v1.1.1: Edited the 'Change Map Size' button to work properly on Google Chrome.
 - v1.1: Added the 'Change Map Size' button.
