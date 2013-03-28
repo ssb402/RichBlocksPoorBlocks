@@ -260,7 +260,11 @@ $(document).ready(function(){
 				}; // DONE: if ($("#state-select option:selected").text()==="PICK A STATE")
 			}; // DONE: function codeAddress()
 			
+			// if there is an address pulled in by query string, try geocoding
+			if (document.getElementById('address').value) {
 			$(codeAddress); // This line of code makes codeAddress() run automatically.
+			}
+			
 			$('#button-search').click(
 				codeAddress
 			); // DONE: $(':button').click()
