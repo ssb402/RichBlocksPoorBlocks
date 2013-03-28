@@ -262,7 +262,7 @@ $(document).ready(function(){
 			
 			// if there is an address pulled in by query string, try geocoding
 			if (document.getElementById('address').value) {
-			$(codeAddress); // This line of code makes codeAddress() run automatically.
+			codeAddress(); // This line of code makes codeAddress() run automatically.
 			}
 			
 			$('#button-search').click(
