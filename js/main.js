@@ -1,4 +1,4 @@
-// v1.2.1
+// v1.2.2
 $(document).ready(function(){
 	$.getJSON("./js/states_pretty.JSON",function(states){
 		// SECTION 1: ADDING HTML TO DOM
@@ -76,8 +76,9 @@ $(document).ready(function(){
 			var stateArr = [];
 			var layer = null;
 			var infoWindow = new google.maps.InfoWindow();
+			var buttonSearch = $('#button-search');
 
-			$('#button-search').click(
+			buttonSearch.click(
 				function codeAddress(){
 					// The following commented-out block is for future use -- possibly to desaturate the map, since it's easier to read colored data on a black-and-white background.
 					// var mapStyle = 'map-style';
@@ -200,12 +201,15 @@ $(document).ready(function(){
 										var midRange1 = accounting.formatMoney(states[selectedState][rangeType]["percent40"]);
 										var midRange2 = accounting.formatMoney(states[selectedState][rangeType]["percent60"]);
 
+										var facebookButton = '<div class="fb-like" data-href="http://www.richblockspoorblocks.com" data-send="false" data-layout="button_count" data-width="100" data-show-faces="true" data-action="recommend"></div>'
+						
 										e.infoWindowHtml = [
 											'<b>' + e.row['label'].value + '.</b>',
 											'<b>' + infoWindow1 + ':</b> ' + medianVal + ' (+/- ' + marginError + ').',
 											'<b>' + infoWindow2 + ':</b> ' + midRange1 + ' to ' + midRange2 + '. <br>',
-											'<i>All data come from the 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>. The statewide middle range covers Census Tracts which have a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of this state\'s Census Tracts.</i>'
-										];
+											'<i>Source: 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>. Statewide middle range covers Census Tracts having a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of the state\'s Census Tracts.</i>',
+											facebookButton
+										];	
 										infoWindow.setContent('<div class="info-window">' + e.infoWindowHtml.join('<br>') + '</div>');
 										infoWindow.setPosition(e.latLng);
 										infoWindow.open(gmap);
@@ -217,7 +221,7 @@ $(document).ready(function(){
 									var legendLabels = [
 										'<h3 id="legend-title">'+selectedState+' '+infoWindow1Lower+' (in 2011 dollars)</h3> <div id="legend-labels">',
 										'<span id="bottom5">'+bottom5Perc+' or less</span>',
-										'<img id="gradient" src="./images/'+legendScale +'" />',
+										'<img id="gradient" src="./images/' + legendScale +'" />',
 										'<span id="top5">'+top5Perc+' or more</span>'
 									];
 
@@ -237,6 +241,10 @@ $(document).ready(function(){
 									$('#bottom5').html(bottom5Perc+' or less');
 									$('#top5').html(top5Perc+' or more');
 
+									gmap.controls[google.maps.ControlPosition.RIGHT_CENTER].push('<div class="fuck">AAAAA</div>');										
+									
+
+
 								} else {
 									alert("Couldn't find address for the following reason: " + status + ". Sorry about that. Please try another address.");
 								} // DONE: if(status===google.maps.GeocoderStatus.OK)
@@ -251,5 +259,15 @@ $(document).ready(function(){
 				} // DONE: function codeAddress()
 			); // DONE: $(':button').click()
 		// DONE: SECTION 4
+		google.maps.event.addListener(infoWindow,'domready',function(){
+			FB.XFBML.parse();
+		});
+
+		google.maps.event.addListener(buttonSearch,'click',function(){
+			var thing = document.createElement('div');
+			this.id = 'thing';
+			thing.innerHTML = 'AAAAAAAAAAAAAAAAAAA'
+			gmap.controls[google.maps.ControlPosition.TOP_CENTER].push(thing);
+		});
 	}); // DONE: $.getJSON()
 }); // DONE: $(document).ready()
