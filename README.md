@@ -1,4 +1,4 @@
-Rich Blocks, Poor Blocks v1.2.2
+Rich Blocks, Poor Blocks v1.2.3
 ================================
 
 ## What is this? ##
@@ -52,6 +52,7 @@ Questions? Email RichBlocksPoorBlocks@gmail.com, tweet [@RichBlocksPoorB](http:/
 
 ## Version History ##
 
+- v1.2.3: Fixed spellings of Massachusetts and Pennsylvania.
 - v1.2.2: Minor README.md updates.
 - v1.2.1: Minor README.md updates.
 - v1.2: Edited 'main.js' so that if a user changes the map type then clicks 'Search' without changing the address and state, then the map layer, infobox and legend will change without the map re-zooming and re-centering itself.
