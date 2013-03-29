@@ -7,12 +7,12 @@
 
 		<title>Rich Blocks, Poor Blocks | Neighborhood income and rent maps of U.S. cities</title>
 
-		<link href="./css/style.css?v=1.04" rel="stylesheet"> <!-- CSS Stylesheet -->
+		<link href="./css/style_embed.css?v=1.0" rel="stylesheet"> <!-- CSS Stylesheet -->
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> <!-- jQuery -->
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> <!-- Google Maps API -->
 		<script type="text/javascript" src="./js/accounting.min.js"></script> <!-- Formats Floats into money-numbers -->
-		<script type="text/javascript" src="./js/main.js?v=1.2"></script> <!-- The main script for the site -->
+		<script type="text/javascript" src="./js/embed.js?v=1.0"></script> <!-- The main script for the site -->
 
 		<!-- Google Analytics -->
 		<script type="text/javascript">
@@ -30,8 +30,30 @@
 	</head>
 	
 	<body>
-			<!-- MAP -->
+		<!-- ABOVE MAP -->
+			<div id="above-map">
+				<!-- <h1>Rich Blocks, Poor Blocks</h1>
+				<h2>A map of income and rent in every neighborhood in every city in America</h2> -->
+				<div id="address-form-container">
+					<span id="form-pretext"> Enter a city name or address and pick a state -- or just a pick a state from the dropdown.</span>
+					(<input type="checkbox" name="colorblind" value="colorblind"><span id="colorblind">I'm colorblind</span>)<br>
+					<input id="address" type="text">,
+					<select id="state-select">
+						<option value="default">PICK A STATE</option>
+					</select>,
+					<select id="map-type-select">
+						<option value="default">PICK MAP TYPE</option>
+					</select>
+					<input id="button-search" type="button" value="Search" />
+					<!-- <input id="button-mapsize" type="button" value="Change Map Size" /> -->
+					<!-- <br>
+					<span id="note">(NOTE: Loading taking long? Zoom in or out. No map? Reload, or choose another browser. <b>And if you want more economic details, click any part of the map after you click "Search."</b>)</span> -->
+				</div>
+			</div>
+		<!-- /ABOVE MAP -->
+
+		<!-- MAP -->
 			<div id="map-canvas"></div>
-			<!-- /MAP -->
+		<!-- /MAP -->
 	</body>
 </html>

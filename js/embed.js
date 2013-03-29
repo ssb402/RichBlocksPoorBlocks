@@ -1,17 +1,3 @@
-// v1.2.2
-// Some comments (questions) here are mostly by Chris Persaud attempting to understand how all this works.
-// 03/11/2012 Update: This code is at the point where the map zooms to the queried address automatically (just make sure the URL you type in has a valid query at the end -- see the line below for an example...)
-
-// Example query that the embed feature is meant to capture and parse: PATH/TO/index.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
-
-/*
-	Enter the above URL into your browser. 
-	You'll see that the address box has '1900 Pennsylvania Avenue' in it, while the state selected is 'District of Columbia'. 
-	The 'Income' map is selected, and colorblind mode is turned on.
-	Once the web page (er, DOM) is ready to be interacted with, codeAddress will run (see lines 123 to 266 for more info). 
-*/
-
-
 // When called, parses and returns query string, client-side, as object properties
 function getUrlVars(){
     var vars = [], hash;
@@ -74,45 +60,51 @@ $(document).ready(function(){
 		// SECTION 2: Create the Google map with the coordinates and add the Fusion Tables layer to it. Plus, it zooms and centers to whatever state is selected.
 		var geocoder, gmap;
 		var mapOptions = {
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			mapTypeControl: false,
+			panControl: false,
+			streetViewControl: false,
+			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL
+			}
 		};
 
 		function initialize(){
 			geocoder = new google.maps.Geocoder(); // This variables is used to automate zooming and centering in this script
 			gmap = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); // Removing this removes the Google Maps layer -- but would it keep any layers on top of it?
 
-			geocoder.geocode(
-				{
-					'address':'United States'
-				},
-				function(results,status){
-					var sw = results[0].geometry.viewport.getSouthWest();
-					var ne = results[0].geometry.viewport.getNorthEast();
-					var bounds = new google.maps.LatLngBounds(sw,ne);
+			// geocoder.geocode(
+			// 	{
+			// 		'address':'United States'
+			// 	},
+			// 	function(results,status){
+			// 		var sw = results[0].geometry.viewport.getSouthWest();
+			// 		var ne = results[0].geometry.viewport.getNorthEast();
+			// 		var bounds = new google.maps.LatLngBounds(sw,ne);
 					
-					gmap.fitBounds(bounds)
-				} // DONE: function(results,status)
-			); // DONE: geocoder.geocode
+			// 		gmap.fitBounds(bounds)
+			// 	} // DONE: function(results,status)
+			// ); // DONE: geocoder.geocode
 
 
 			// SECTION 2.1: The 'Change Map Size' button
-			$('#button-mapsize').click(
-				function changeMapSize(){
-					var slideToggleArr = ['h1','h2','#note']; // These are the DOM elements that will be hidden or shown when the 'Change Map Size' button is clicked
-					var mapCanvas = $('#map-canvas')
-					var mapHeight = mapCanvas.height();
-					var bodyHeight = $('body').height();
+			// $('#button-mapsize').click(
+			// 	function changeMapSize(){
+			// 		var slideToggleArr = ['h1','h2','#note']; // These are the DOM elements that will be hidden or shown when the 'Change Map Size' button is clicked
+			// 		var mapCanvas = $('#map-canvas')
+			// 		var mapHeight = mapCanvas.height();
+			// 		var bodyHeight = $('body').height();
 
-					$(slideToggleArr.join(',')).slideToggle(); // Toggles visibility of all elements in 'slideToggleArr'
+			// 		$(slideToggleArr.join(',')).slideToggle(); // Toggles visibility of all elements in 'slideToggleArr'
 					
-					// If the map is NOT the same size as the 'body', then embiggen it. Otherwise, shrink it back down.
-					if (mapHeight!=bodyHeight){
-						mapCanvas.animate({height:'100%'});
-					} else {
-						mapCanvas.animate({height:'75%'});
-					};					
-				}
-			);
+			// 		// If the map is NOT the same size as the 'body', then embiggen it. Otherwise, shrink it back down.
+			// 		if (mapHeight!=bodyHeight){
+			// 			mapCanvas.animate({height:'100%'});
+			// 		} else {
+			// 			mapCanvas.animate({height:'75%'});
+			// 		};					
+			// 	}
+			// );
 
 
 			// SECTION 3: Find the address once the button is clicked
@@ -210,16 +202,16 @@ $(document).ready(function(){
 
 								// Add custom Infowindows to the map
 								google.maps.event.addListener(layer,'click',function(e){
-									var medianVal = accounting.formatMoney(e.row[dataType].value);
-									var marginError = accounting.formatMoney(e.row[errorType].value);
-									var midRange1 = accounting.formatMoney(states[selectedState][rangeType]["percent40"]);
-									var midRange2 = accounting.formatMoney(states[selectedState][rangeType]["percent60"]);
+									var medianVal = accounting.formatMoney(e.row[dataType].value).replace('.00','');
+									var marginError = accounting.formatMoney(e.row[errorType].value).replace('.00','');
+									var midRange1 = accounting.formatMoney(states[selectedState][rangeType]["percent40"]).replace('.00','');
+									var midRange2 = accounting.formatMoney(states[selectedState][rangeType]["percent60"]).replace('.00','');
 
 									e.infoWindowHtml = [
-										'<b>' + e.row['label'].value + '.</b>',
+										// '<b>' + e.row['label'].value + '.</b>',
 										'<b>' + infoWindow1 + ':</b> ' + medianVal + ' (+/- ' + marginError + ').',
 										'<b>' + infoWindow2 + ':</b> ' + midRange1 + ' to ' + midRange2 + '. <br>',
-										'<i>All data come from the 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>. The statewide middle range covers Census Tracts which have a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of this state\'s Census Tracts.</i>'
+										'<i>Source: 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>.</i>'
 									];
 									infoWindow.setContent('<div class="info-window">' + e.infoWindowHtml.join('<br>') + '</div>');
 									infoWindow.setPosition(e.latLng);
@@ -227,12 +219,12 @@ $(document).ready(function(){
 								}); // DONE: google.maps.event.addListener
 								
 							   	// Setting up and adding the legend
-							   	var bottom5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent5"]);
-							   	var top5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent95"]);
+							   	var bottom5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent5"]).replace('.00','');
+							   	var top5Perc = accounting.formatMoney(states[selectedState][rangeType]["percent95"]).replace('.00','');
 								var legendLabels = [
 									'<h3 id="legend-title">'+selectedState+' '+infoWindow1Lower+' (in 2011 dollars)</h3> <div id="legend-labels">',
 									'<span id="bottom5">'+bottom5Perc+' or less</span>',
-									'<img id="gradient" src="./images/'+legendScale +'" />',
+									'<img id="gradient" src="./images/'+legendScale +'" width="100" height="10" />',
 									'<span id="top5">'+top5Perc+' or more</span>'
 								];
 
@@ -274,4 +266,3 @@ $(document).ready(function(){
 		
 	}); // DONE: $.getJSON()
 }); // DONE: $(document).ready()
-

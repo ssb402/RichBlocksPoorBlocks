@@ -1,0 +1,139 @@
+/* v1.0 */
+
+html {
+	float:right;
+	height:100%;
+	text-align:center;
+	width:100%;
+}
+
+body {
+	background:url(/images/bg.png) repeat scroll 0 0 transparent;
+	height:85%;
+	position:relative;
+	right:8px;
+	width:100%;
+}
+
+body,select,#legend-labels,#address,#address-form-container input,footer {
+	font-family:Georgia,Times,"Times New Roman",serif;
+}
+
+h1,h2,#legend-title {
+	font-family:Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
+	font-size: 12px;
+}
+
+#address {
+	width:300px;
+}
+
+select,#address {
+	font-size:16px;
+	font-weight:700;
+}
+
+#address-form-container input {
+	font-weight:700;
+	margin-top:1ex;
+}
+
+#map-canvas {
+	height:75%;
+	margin-top:5px;
+	width:100%;
+}
+
+#legend {
+	background:none repeat scroll 0 0 #FFF;
+	font-family:Arial;
+	font-size:12px;
+	text-align:center;
+	border-style:solid;
+	border-width:1px;
+	margin:5px;
+	padding:10px;
+}
+
+#legend-title {
+	margin-top:0;
+	text-align:center;
+}
+
+#bottom5,#top5 {
+	bottom:4px;
+	font-size:12px;
+	position:relative;
+}
+
+#bottom5 {
+	margin-right:5px;
+}
+
+#top5 {
+	margin-left:3px;
+}
+
+#below-map {
+	margin-bottom:10px;
+}
+
+#gradient {
+	margin-bottom: 3px;
+}
+
+.info-window {
+	width: 400px;
+	font-family:Georgia,Times,"Times New Roman",serif!important;
+	font-size:12px;
+	text-align:left;
+}
+
+.italics {
+	font-style:italic;
+}
+
+.bold {
+	font-weight:700;
+}
+
+footer {
+height:5%;
+}
+
+.fb-like {
+	bottom:4px;
+	position:relative;
+	right:9px;
+}
+
+/*
+	#twitter-tweet {
+	left:27px;
+	position:relative;
+}
+*/
+
+#twitter-follow {
+	position:relative;
+	right:10px;
+	margin-right:20px;
+}
+
+#stumbledupon {
+	position:relative;
+	right:9px;
+}
+
+#contact {
+	font-size:12px;
+}
+
+#colorblind,#note,#source-note {
+	font-size:14px;
+}
+
+#twitter-container {
+	position:relative;
+	top:1px;
+}
